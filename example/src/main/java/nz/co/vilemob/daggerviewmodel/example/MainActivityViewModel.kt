@@ -1,5 +1,6 @@
-package nz.co.vilemob.daggerviewmodel
+package nz.co.vilemob.daggerviewmodel.example
 
+import nz.co.vilemob.daggerviewmodel.DaggerViewModel
 import javax.inject.Inject
 
 /**

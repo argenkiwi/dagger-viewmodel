@@ -1,1 +1,1 @@
-include ':example', ':dagger-viewmodel'
+include ':dagger-viewmodel', ':example'

@@ -1,4 +1,4 @@
-package nz.co.vilemob.daggerviewmodel.example
+package nz.co.vilemob.daggerviewmodel.example.pop
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import nz.co.vilemob.daggerviewmodel.ViewModelFragment
+import nz.co.vilemob.daggerviewmodel.example.R
 
-class MainFragment : ViewModelFragment<MainFragmentViewModel>() {
+class PopFragment : ViewModelFragment<PopViewModel>() {
 
     private lateinit var scopedTimerTextView: TextView
     private lateinit var unscopedTimerTextView: TextView
@@ -18,7 +19,7 @@ class MainFragment : ViewModelFragment<MainFragmentViewModel>() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_main, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_pop, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,14 +28,14 @@ class MainFragment : ViewModelFragment<MainFragmentViewModel>() {
     }
 
     override fun onCreateViewModel(viewModelProvider: ViewModelProvider) =
-            viewModelProvider.get(MainFragmentViewModel::class.java)
+            viewModelProvider.get(PopViewModel::class.java)
 
-    override fun onViewModelCreated(viewModel: MainFragmentViewModel) {
-        viewModel.scopedTimerLiveData.observe(this, Observer {
+    override fun onViewModelCreated(viewModel: PopViewModel) {
+        viewModel.scopedLiveData.observe(this, Observer {
             scopedTimerTextView.text = getString(R.string.scoped_timer, it)
         })
 
-        viewModel.unscopedTimerLiveData.observe(this, Observer {
+        viewModel.unscopedLiveData.observe(this, Observer {
             unscopedTimerTextView.text = getString(R.string.unscoped_timer, it)
         })
     }

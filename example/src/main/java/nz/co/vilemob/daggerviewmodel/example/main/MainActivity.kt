@@ -1,20 +1,21 @@
-package nz.co.vilemob.daggerviewmodel.example
+package nz.co.vilemob.daggerviewmodel.example.main
 
 import android.arch.lifecycle.ViewModelProvider
 import android.os.Bundle
 import nz.co.vilemob.daggerviewmodel.appcompat.DaggerViewModelActivity
+import nz.co.vilemob.daggerviewmodel.example.push.PushFragment
 
-class MainActivity : DaggerViewModelActivity<MainActivityViewModel>() {
+class MainActivity : DaggerViewModelActivity<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         when (savedInstanceState) {
             null -> supportFragmentManager.beginTransaction()
-                    .add(android.R.id.content, MainFragment())
+                    .add(android.R.id.content, PushFragment())
                     .commit()
         }
     }
 
     override fun onCreateViewModel(viewModelProvider: ViewModelProvider) =
-            viewModelProvider.get(MainActivityViewModel::class.java)
+            viewModelProvider.get(MainViewModel::class.java)
 }

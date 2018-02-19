@@ -8,9 +8,6 @@ import android.support.v4.app.Fragment
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-/**
- * Created by Leandro on 17/02/2018.
- */
 abstract class ViewModelFragment<VM : ViewModel> : Fragment() {
 
     @Inject

@@ -17,9 +17,4 @@ class MainActivity : DaggerViewModelActivity<MainActivityViewModel>() {
 
     override fun onCreateViewModel(viewModelProvider: ViewModelProvider) =
             viewModelProvider.get(MainActivityViewModel::class.java)
-
-    override fun onViewModelCreated(viewModel: MainActivityViewModel) {
-        super.onViewModelCreated(viewModel)
-        // TODO initialise or get reference to viewModel here.
-    }
 }

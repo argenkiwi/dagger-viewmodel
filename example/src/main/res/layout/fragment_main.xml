@@ -6,14 +6,14 @@
     tools:context="nz.co.vilemob.daggerviewmodel.example.push.PushFragment">
 
     <TextView
-        android:id="@+id/scoped_timer"
+        android:id="@+id/scopedTimerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
         tools:text="@string/scoped_timer" />
 
     <TextView
-        android:id="@+id/unscoped_timer"
+        android:id="@+id/unscopedTimerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"

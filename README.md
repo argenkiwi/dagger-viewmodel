@@ -41,6 +41,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.1.0"
     
     // Dagger ViewModel
-    implementation 'com.github.argenkiwi:dagger-viewmodel:v1.0.5'
+    implementation 'com.github.argenkiwi:dagger-viewmodel:1.0.6'
 }
 ````

@@ -22,10 +22,12 @@ class PushFragment : ViewModelFragment<PushViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pushFragmentButton.setOnClickListener {
-            fragmentManager.beginTransaction()
-                    .replace(android.R.id.content, PopFragment())
-                    .addToBackStack("PUSH")
-                    .commit()
+            fragmentManager?.apply {
+                beginTransaction()
+                        .replace(android.R.id.content, PopFragment())
+                        .addToBackStack("PUSH")
+                        .commit()
+            }
         }
     }
 

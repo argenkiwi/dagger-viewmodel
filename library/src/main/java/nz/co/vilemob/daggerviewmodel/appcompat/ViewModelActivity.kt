@@ -1,22 +1,22 @@
-package nz.co.vilemob.daggerviewmodel
+package nz.co.vilemob.daggerviewmodel.appcompat
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import dagger.android.support.AndroidSupportInjection
+import android.support.v7.app.AppCompatActivity
+import dagger.android.AndroidInjection
+import nz.co.vilemob.daggerviewmodel.ViewModelFactory
 import javax.inject.Inject
 
-abstract class ViewModelFragment<VM : ViewModel> : Fragment() {
+abstract class ViewModelActivity<VM : ViewModel> : AppCompatActivity() {
 
     @Inject
     internal lateinit var viewModelFactory: ViewModelFactory<VM>
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        AndroidSupportInjection.inject(this)
-        ViewModelProviders.of(this, viewModelFactory)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
+        ViewModelProvider(this, viewModelFactory)
                 .let { viewModelProvider -> onCreateViewModel(viewModelProvider) }
                 .let { viewModel -> onViewModelCreated(viewModel) }
     }

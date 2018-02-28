@@ -8,9 +8,6 @@ import dagger.android.AndroidInjection
 import nz.co.vilemob.daggerviewmodel.ViewModelFactory
 import javax.inject.Inject
 
-/**
- * Created by Leandro on 17/02/2018.
- */
 abstract class ViewModelActivity<VM : ViewModel> : AppCompatActivity() {
 
     @Inject

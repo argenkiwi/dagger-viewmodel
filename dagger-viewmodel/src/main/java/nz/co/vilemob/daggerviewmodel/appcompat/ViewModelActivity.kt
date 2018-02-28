@@ -2,7 +2,6 @@ package nz.co.vilemob.daggerviewmodel.appcompat
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
@@ -20,7 +19,7 @@ abstract class ViewModelActivity<VM : ViewModel> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AndroidInjection.inject(this)
-        ViewModelProviders.of(this, viewModelFactory)
+        ViewModelProvider(this, viewModelFactory)
                 .let { viewModelProvider -> onCreateViewModel(viewModelProvider) }
                 .let { viewModel -> onViewModelCreated(viewModel) }
     }

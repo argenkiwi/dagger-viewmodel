@@ -2,7 +2,6 @@ package nz.co.vilemob.daggerviewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import dagger.android.support.AndroidSupportInjection
@@ -16,7 +15,7 @@ abstract class ViewModelFragment<VM : ViewModel> : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         AndroidSupportInjection.inject(this)
-        ViewModelProviders.of(this, viewModelFactory)
+        ViewModelProvider(this, viewModelFactory)
                 .let { viewModelProvider -> onCreateViewModel(viewModelProvider) }
                 .let { viewModel -> onViewModelCreated(viewModel) }
     }

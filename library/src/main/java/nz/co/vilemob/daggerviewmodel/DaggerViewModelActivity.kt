@@ -1,10 +1,9 @@
 package nz.co.vilemob.daggerviewmodel
 
-import dagger.android.HasFragmentInjector
 import dagger.android.support.HasSupportFragmentInjector
 
 abstract class DaggerViewModelActivity<VM : DaggerViewModel> : ViewModelActivity<VM>(),
-        HasFragmentInjector, HasSupportFragmentInjector {
+        HasSupportFragmentInjector {
 
     private lateinit var viewModel: VM
 
@@ -12,6 +11,5 @@ abstract class DaggerViewModelActivity<VM : DaggerViewModel> : ViewModelActivity
         this.viewModel = viewModel
     }
 
-    override fun fragmentInjector() = viewModel.frameworkFragmentInjector
     override fun supportFragmentInjector() = viewModel.supportFragmentInjector
 }

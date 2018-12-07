@@ -5,15 +5,15 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.argenkiwi'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
-        versionName "1.0.7"
+        versionName "1.1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -26,20 +26,21 @@ android {
 }
 
 ext {
-    daggerVersion = "2.14.1"
+    daggerVersion = "2.16"
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
-    implementation "android.arch.lifecycle:viewmodel:1.1.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.0.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
 }
+
 repositories {
     mavenCentral()
 }

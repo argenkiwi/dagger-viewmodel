@@ -1,7 +1,7 @@
 package nz.co.vilemob.daggerviewmodel.example.main
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

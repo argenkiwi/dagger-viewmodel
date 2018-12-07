@@ -1,6 +1,6 @@
 package nz.co.vilemob.daggerviewmodel.example.main
 
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import nz.co.vilemob.daggerviewmodel.appcompat.DaggerViewModelActivity
 import nz.co.vilemob.daggerviewmodel.example.push.PushFragment

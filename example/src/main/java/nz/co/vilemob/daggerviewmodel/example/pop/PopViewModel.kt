@@ -1,6 +1,5 @@
 package nz.co.vilemob.daggerviewmodel.example.pop
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 import javax.inject.Named
@@ -9,6 +8,6 @@ import javax.inject.Named
  * Created by Leandro on 20/02/2018.
  */
 class PopViewModel @Inject constructor(
-        @Named("scoped_live_data") val scopedLiveData: LiveData<Int>,
-        @Named("unscoped_live_data") val unscopedLiveData: LiveData<Int>
+        @Named("scoped_int") val scopedInt: Int,
+        @Named("unscoped_int") val unscopedInt: Int
 ) : ViewModel()
